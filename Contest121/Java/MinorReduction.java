@@ -11,20 +11,27 @@ public class MinorReduction{
       String num = br.readLine();
       String res = "";
       String head = "";
+      ArrayList<Character> chars = new ArrayList<Character>();
+      for(char c: num.toCharArray()){
+        chars.add(c);
+      }
       BigInteger max = BigInteger.ZERO;
       if(num.length() == 1){
         res = num;
       } else{
-        for(int i = 0; i < num.length() - 1; i++){
+        BigInteger length = BigInteger.valueOf(num.length()-1);
+        BigInteger index = BigInteger.ZERO;
+        while(index.compareTo(length) == -1){
           //char + char
-          if(i != 0){
-            head = num.substring(0, i);
+          if(!index.equals(BigInteger.ZERO)){
+            head = num.substring(0, index);
           }
-          int sum = num.charAt(i) - '0' + num.charAt(i + 1) - '0';
-          res = head + Integer.toString(sum) + num.substring(i+2);
+          int sum = chars.get(index) - '0' + chars.get(index.add(BigInteger.ONE)) - '0';
+          res = head + Integer.toString(sum) + num.substring(index.add(BigInteger.TWO));
           BigInteger comp = new BigInteger(res);
           //pw.println("comp" + comp);
           max = max.max(comp);
+          index = index.add(BigInteger.ONE);
         }
       }
       pw.println(max);
