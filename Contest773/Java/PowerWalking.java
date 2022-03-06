@@ -10,6 +10,9 @@ public class PowerWalking{
     int t = Integer.parseInt(br.readLine());
 
     while(t-- > 0){
+      int n = Integer.parseInt(br.readLine());
+      int[] power = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+
     }
   }
 }

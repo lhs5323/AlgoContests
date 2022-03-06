@@ -13,6 +13,8 @@ public class HardWay{
       // pseudo algo: determine the slope of the triangle
       // 1) if the slope of the triangle contains 0 then it's unsafe
       //  condition: only one vertex's y position has to be smaller than those of two vertexes
+      // 2) ummmm;;;; 5 wrong...
+      // 3)
       float[][] triangle  = new float[3][2];
       float ans = 0;
       for(int i = 0; i < 3; i++){
