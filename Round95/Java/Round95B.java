@@ -20,14 +20,16 @@ public class Round95B{
         }
       }
       Collections.sort(unlocked, Collections.reverseOrder());
+      int index = 0;
       for(int i = 0; i < n; i++){
         if(locked[i] == 0){
-          unlocked.get(i);
+          test[i] = unlocked.get(index);
+          index++;
         }
-        pw.print(locked[i] + " ");
+        pw.print(test[i] + " ");
       }
       pw.println();
     }
-    pw.close()
+    pw.close();
   }
 }
