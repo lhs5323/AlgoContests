@@ -36,6 +36,7 @@ public class Contest668C{
     }
     pw.close();
   }
+
   public static boolean chkBalanced(int[] t, String num){
     int index = 0;
     while(index + t[1] < t[0]){

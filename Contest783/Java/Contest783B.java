@@ -15,25 +15,13 @@ public class Contest783B{
       long[] test = Arrays.stream(br.readLine().split(" ")).mapToLong(Long::parseLong).toArray();
       long[] chairs = Arrays.stream(br.readLine().split(" ")).mapToLong(Long::parseLong).toArray();
       String ans = "YES";
-      BigInteger chair = BigInteger.ZERO;
-      /*if(test[0] > test[1]){
+      long chair = 0;
+      if(test[0] > test[1]){
         ans ="NO";
       } else{
         for(int i = 0; i < test[0]; i++){
           chair += chairs[i] * 2;
           if(chair > test[1]){
-            ans = "NO";
-            break;
-          }
-        }
-      }*/
-      if(test[0] > test[1]){
-        ans = "NO";
-      } else{
-        for(long i = 0; i < test[0]; i++){
-          BigInteger chairs = BigInteger.valueOf(chairs[i]);
-          chair = chair.add(chairs.multiply(BigInteger.TWO));
-          if(chair.compareTo(BigInteger.valueOf(test[1])) == 1){
             ans = "NO";
             break;
           }
