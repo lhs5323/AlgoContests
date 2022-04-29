@@ -12,18 +12,22 @@ public class DfsPractice{
     int n = s[0];
     int m = s[1];
     int start = s[2];
-    int[] arr = new int[];
-    ArrayList<Integer>[] a = new ArrayList<Integer>[n];
+    //int[] arr = new int[];
+    ArrayList<Integer>[] a = new ArrayList<Integer>[n + 1];
+    for(int i = 1; i < n + 1; i++){
+      a[i] = new ArrayList<Integer>();
+    }
+    for(int i = 0; i < m; i++){
+      int[] edge = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+      a[edge[0]].add(edge[1]);
+    }
 
-    a.add(new int[]{1,2,3});
-    a.add(new int[]{5,6});
-    //Vector<Integer> [1001]v;
-    int[] ans = v.get(0);
     pw.println(ans[1]);
     pw.close();
 
 
   }
+  public static void dfs()
 
 
 }
