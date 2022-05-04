@@ -9,7 +9,12 @@ public class Round663A{
     PrintWriter pw = new PrintWriter(System.out);
     long t = Integer.parseInt(br.readLine());
     while(t-- > 0){
-      String s = br.readLine();
+      int n = Integer.parseInt(br.readLine());
+      for(int i = n; i > 0; i--){
+        pw.print(i + " ");
+      }
+      pw.println();
     }
+    pw.close();
   }
 }
