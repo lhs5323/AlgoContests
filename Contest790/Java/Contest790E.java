@@ -22,6 +22,12 @@ public class Contest790E{
       Arrays.sort(candies);
       int[] sum = new int[arr[0]];
       sum[0] = candies[candies.length - 1];
+      for(int i = 0; i < numCandies.length; i++){
+        int ans = -1;
+
+      }
+      int[] sum = new int[arr[0]];
+      sum[0] = candies[candies.length - 1];
       for(int i = 1; i < sum.length; i++){
         sum[i] = candies[candies.length - (i + 1)] + sum[i - 1];
       }
