@@ -12,20 +12,8 @@ public class Contest790E{
       int[] arr = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
       int[] candies = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
       int query = arr[1];
-      int[] numCandies = new int[query]
-      int index = 0;
-      while(query-- > 0){
-        int target = Integer.parseInt(br.readLine());
-        numCandies[index] = target;
-        index++;
-      }
+    
       Arrays.sort(candies);
-      int[] sum = new int[arr[0]];
-      sum[0] = candies[candies.length - 1];
-      for(int i = 0; i < numCandies.length; i++){
-        int ans = -1;
-
-      }
       int[] sum = new int[arr[0]];
       sum[0] = candies[candies.length - 1];
       for(int i = 1; i < sum.length; i++){
@@ -33,14 +21,18 @@ public class Contest790E{
       }
       while(query-- > 0){
         int target = Integer.parseInt(br.readLine());
+        int left = -1, right = arr[0];
         int ans = -1;
-        for(int i = 0; i < sum.length; i++){
-          if(sum[i] >= target){
-            ans = i + 1;
-            break;
+        while(right - left > 1){
+          int mid = (right + left) / 2;
+          if(sum[mid] >= target){
+            right = mid;
+          } else{
+            left = mid;
           }
         }
-        pw.println(ans);
+        pw.println(right == arr[0] ? -1 : right + 1);
+
       }
 
     }
