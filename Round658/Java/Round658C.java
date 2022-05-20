@@ -12,7 +12,7 @@ public class Round658C{
       int n = Integer.parseInt(br.readLine());
       String s = br.readLine();
       String s1 = br.readLine();
-
+      
       int[] piles = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
 
 
